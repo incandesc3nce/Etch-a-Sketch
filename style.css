@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .flex {
@@ -9,7 +10,6 @@
 }
 
 #grid {
-    height: 100vh;
     justify-content: center;
     align-items: center;
 }
@@ -18,7 +18,18 @@
     border: 1px solid black; 
 }
 
-
 .hover {
     background-color: black;
+}
+
+.flex-button {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    margin: 1%;
+    font-size: large;
+    padding-left: 10px;
+    padding-right: 10px;
 }
