@@ -25,11 +25,12 @@ function createGrid(size) {
             row.appendChild(block);
             
             block.classList.add('block');
-            const square = `width: ${680 / size}px; height: ${680 / size}px`;
+            const square = `width: ${680 / size}px; height: ${680 / size}px;`;
+            const rgb = randomRGB();
 
             block.setAttribute('style', square);
             block.addEventListener('mouseover', () => {
-                block.setAttribute('style', randomRGB() + square)
+                block.setAttribute('style', rgb + square)
             });
         }
 
