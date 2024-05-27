@@ -1,5 +1,10 @@
 function createGrid(size) {
     const grid = document.querySelector('#grid');
+    const createdGrid = document.createElement('div');
+
+    createdGrid.setAttribute('id', 'createdGrid');
+    createdGrid.setAttribute('class', 'flex');
+    grid.appendChild(createdGrid);
 
     for (let i = 1; i <= size; i++) {
         const row = document.createElement('div');
@@ -12,9 +17,9 @@ function createGrid(size) {
                 block.classList.add('hover');
             });
         }
-        grid.appendChild(row);
+
+        createdGrid.appendChild(row);
     }
 }
 
-let size = 16;
 createGrid(16);
