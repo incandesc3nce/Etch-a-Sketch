@@ -9,21 +9,27 @@
     display: flex;
 }
 
-#grid {
+.center {
     justify-content: center;
     align-items: center;
 }
+.fixed-size {
+    width: 680px;
+    height: 680px;
+}
+.grow {
+    flex: 1;
+}
 
 .block {
-    border: 1px solid black; 
+    border: 1px solid black;
 }
 
 .hover {
     background-color: black;
 }
 
-.flex-button {
-    display: flex;
+.button {
     justify-content: center;
 }
 
