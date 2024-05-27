@@ -5,7 +5,7 @@ function randomRGB() {
     const green = randomBetween(0, 255);
     const blue = randomBetween(0, 255);
 
-    return `background-color: rgb(${red}, ${green}, ${blue});`;
+    return `rgba(${red}, ${green}, ${blue}`;
 }
 
 function createGrid(size) {
@@ -20,17 +20,24 @@ function createGrid(size) {
         const row = document.createElement('div');
         row.classList.add('grow');
         for (let k = 1; k <= size; k++) {
+            const blockContainer = document.createElement('div');
             const block = document.createElement('div');
 
-            row.appendChild(block);
+            blockContainer.setAttribute('style', 'background-color: rgb(0, 0, 0);');
+            blockContainer.appendChild(block);
+            row.appendChild(blockContainer);
             
             block.classList.add('block');
             const square = `width: ${680 / size}px; height: ${680 / size}px;`;
             const rgb = randomRGB();
+            let opacity = 1;
+            let rgbString = `background-color: ${rgb}, ${opacity});`;
 
             block.setAttribute('style', square);
             block.addEventListener('mouseover', () => {
-                block.setAttribute('style', rgb + square)
+                if (opacity !== 0) opacity -= 0.1;
+                rgbString = `background-color: ${rgb}, ${opacity});`;
+                block.setAttribute('style', rgbString + square)
             });
         }
 
